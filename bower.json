@@ -14,7 +14,12 @@
   "dependencies": {
     "purescript-prelude": "^4.1.0",
     "purescript-console": "^4.2.0",
-    "purescript-effect": "^2.0.1"
+    "purescript-effect": "^2.0.1",
+    "purescript-aff": "^5.1.0",
+    "purescript-checked-exceptions": "^2.0.0",
+    "purescript-exceptions": "^4.0.0",
+    "purescript-record": "^2.0.0",
+    "purescript-variant": "^5.2.0"
   },
   "devDependencies": {
     "purescript-psci-support": "^4.0.0"
