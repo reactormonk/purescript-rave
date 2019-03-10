@@ -1,0 +1,22 @@
+{
+  "name": "purescript-rave",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reactormonk/purescript-rave.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^4.1.0",
+    "purescript-console": "^4.2.0",
+    "purescript-effect": "^2.0.1"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^4.0.0"
+  }
+}
