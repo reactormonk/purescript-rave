@@ -19,7 +19,7 @@ import Prim.Row as R
 import Prim.RowList (class RowToList)
 import Prim.RowList as RL
 import Record (get)
-import Type.Row (RProxy)
+import Type.Data.Row (RProxy)
 
 -- | Short for "Reader, Aff, Variant."
 newtype Rave r v a = Rave (ReaderT r (ExceptV v Aff) a)
