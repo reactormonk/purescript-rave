@@ -2,7 +2,9 @@
 Welcome to a Spago project!
 You can edit this file as you like.
 -}
-{ name =
+{ sources =
+    [ "src/**/*.purs", "test/**/*.purs" ]
+, name =
     "rave"
 , dependencies =
     [ "aff"
@@ -11,6 +13,8 @@ You can edit this file as you like.
     , "effect"
     , "exceptions"
     , "record"
+    , "transformers"
+    , "typelevel-prelude"
     , "variant"
     ]
 , packages =

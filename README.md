@@ -58,6 +58,16 @@ startServer :: forall r. Rave { port :: Int, host :: String, dbConnection :: Str
 Java has given checked exceptions a bad reputation. In PureScript, they have a
 comparatively low cognitive and LoC overhead.
 
+### Checked Exceptions
+
+### Unchecked Exceptions
+
+Sometimes, it doesn't make sense to mark something as checked exception, because
+you'll not be able to handle it anyway. If the response from a REST service is
+not decodable anymore, there's a systematic problem your program can't recover
+on its own. Or the database connection is down, and you can at most wait a bit
+to see if gets better.
+
 ## Aff (effect)
 
 Aff is a good default effect monad for any application. You may hit a few corner

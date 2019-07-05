@@ -5,7 +5,7 @@ import Prelude
 import Control.Monad.Error.Class (class MonadError, class MonadThrow, throwError, try)
 import Control.Monad.Except (runExceptT)
 import Control.Monad.Except.Checked (ExceptV)
-import Control.Monad.Reader (ReaderT, runReaderT)
+import Control.Monad.Reader (class MonadAsk, ReaderT, runReaderT)
 import Control.Monad.Trans.Class (lift)
 import Data.Either (Either(..))
 import Data.Symbol (class IsSymbol, SProxy(..))
@@ -32,6 +32,7 @@ derive newtype instance raveApply :: Apply (Rave r v)
 derive newtype instance raveFunctor :: Functor (Rave r v)
 derive newtype instance raveBind :: Bind (Rave r v)
 derive newtype instance raveMonadError :: MonadThrow (Variant v) (Rave r v)
+derive newtype instance raveMonadAsk :: MonadAsk r (Rave r v)
 
 class VariantInjTagged a b | a -> b where
   injTagged :: Record a -> Variant b
