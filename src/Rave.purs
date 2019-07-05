@@ -22,7 +22,7 @@ import Record (get)
 import Type.Data.Row (RProxy)
 
 -- | Short for "Reader, Aff, Variant."
-newtype Rave r v a = Rave (ReaderT r (ExceptV v Aff) a)
+newtype Rave r v e = Rave (ReaderT r (ExceptV v Aff) e)
 
 derive newtype instance raveMonadAff :: MonadAff (Rave r v)
 derive newtype instance raveMonadEffect :: MonadEffect (Rave r v)
@@ -57,10 +57,10 @@ runRave :: forall v r rl a.
   VariantTags rl =>
   VariantShows rl =>
   RProxy v ->
-  Rave r v a ->
   r ->
+  Rave r v a ->
   Aff a
-runRave _ (Rave rave) r = do
+runRave _ r (Rave rave) = do
   ran <- runExceptT $ runReaderT rave r
   case ran of
     Right res -> pure res
